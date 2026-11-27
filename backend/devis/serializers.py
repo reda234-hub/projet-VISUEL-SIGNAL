@@ -13,7 +13,7 @@ class DevisSerializer(serializers.ModelSerializer):
 
         ]
         read_only_fields =["id"]
-    def validation_fichier(self,fichier):
+    def validate_fichier(self, fichier):
         if fichier and fichier.size> 5 * 1024 * 1024:
             raise serializers.ValidationError("le fichier ne doit pas depasser 5 Mo")
         return fichier 
