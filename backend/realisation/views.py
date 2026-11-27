@@ -6,7 +6,7 @@ class RealisationViewSet(viewsets.ReadOnlyModelViewSet):
     def get_queryset(self):
         qs= (
             Realisation.objects.filter(publie=True)
-            .select_related("services")
+            .select_related("service")
             .prefetch_related("photos")
         )
         service = self.request.query_params.get("service")

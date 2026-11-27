@@ -24,6 +24,6 @@ urlpatterns = [
     path("api/",include("services.urls")),
     path("api/",include("realisation.urls")),
     path("api/devis/",include("devis.urls")),
-    path("api/faq",include("feq.urls")),
+    path("api/faq/",include("feq.urls")),
 
-] + static (settings.MEDIA_URL,document_roost=settings.MEDIA_ROOT)
+] + static (settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
